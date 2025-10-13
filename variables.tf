@@ -4,11 +4,6 @@ variable "aws_region" {
   default     = "us-east-1" # Change this to your desired region
 }
 
-variable "vpc_name" {
-  type = string
-  description = "The name of the VPC."
-  default = "my-vpc"
-}
 
 variable "subnet_name" {
   type = string
