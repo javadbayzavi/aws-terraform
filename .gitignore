@@ -10,7 +10,7 @@ crash.log
 .terraform.lock.hcl
 
 # Variable files containing secrets
-terraform.tfvars
+*.tfvars
 *.tfvars.json
 
 # Backup files
