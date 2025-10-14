@@ -6,9 +6,9 @@ variable "aws_region" {
 
 
 variable "subnet_name" {
-  type = string
+  type        = string
   description = "The name of the subnet."
-  default = "my-subnet"
+  default     = "my-subnet"
 }
 
 variable "environemt" {
