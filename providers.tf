@@ -9,4 +9,7 @@ terraform {
 
 provider "aws" {
   region = var.aws_region # Use a variable for region (defined in variables.tf)
+  assume_role {
+    #role_arn = "path to user arn"
+  }
 }
