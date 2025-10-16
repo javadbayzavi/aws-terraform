@@ -10,7 +10,7 @@ variable "cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-variable "environment": {
+variable "environment" {
   type        = string
   description = "Define environment for network deployment"
   default     = "dev"
