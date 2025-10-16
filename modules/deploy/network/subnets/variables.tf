@@ -1,7 +1,7 @@
 variable "availability_zone" {
   type        = string
   description = "This name is included in VPC tags"
-  default     = "use1-az1"
+  default     = "us-east-1a"
 }
 
 variable "cidr_block" {
@@ -20,4 +20,10 @@ variable "vpc_id" {
   type        = string
   description = "This id is uinque per VPC"
   default     = "main"
+}
+
+variable "subnet_type" {
+  type        = string
+  description = "This defines if the subnet is public or private"
+  default     = "public"
 }
