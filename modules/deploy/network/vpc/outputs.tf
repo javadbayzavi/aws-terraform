@@ -15,5 +15,5 @@ output "vpc_arn" {
 
 output "vpc_name" {
   description = "The conceptual name of the VPC"
-  value = var.vpc_name
+  value       = var.vpc_name
 }
