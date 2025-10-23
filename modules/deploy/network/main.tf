@@ -1,6 +1,6 @@
 #Deploy VPCs 
 module "vpc_module" {
-  for_each   = var.vpcs
+  for_each   = var.vpcs_cidr
   source     = "./vpc"
   vpc_name   = each.key
   cidr_block = each.value
@@ -35,3 +35,11 @@ module "subnets" {
   subnet_type       = each.value.subnet_type
 }
 
+#Deploy Security Groups
+module "sgs" {
+  source = "./sg"
+  for_each = {for _, vpc_type in var.vpc_types : vpc_type => vpc_type}
+  environment = each.key
+  vpc_id      = module.vpc_module[each.key].vpc_id
+  allowed_ports = [22, 443]
+}
