@@ -3,7 +3,7 @@ AWS Terraform Project
 This repository contains Terraform modules to deploy AWS infrastructure including VPCs, subnets, and security groups. The project is organized with reusable modules for clean orchestration and layered deployment.
 
 Project Structure
-
+```
 root/
   ├─ modules/
   │   ├─ deploy/
@@ -24,6 +24,7 @@ root/
   ├─ variables.tf
   ├─ outputs.tf
   └─ terraform.tfvars
+```
 
 Features
 	•	Modular deployment using Terraform modules.
