@@ -1,22 +1,10 @@
+variable "aws_region" {
+  type        = string
+}
+
 variable "vpcs_cidr" {
   description = "Map of VPC names to CIDR blocks"
   type = map(string)
-}
-
-
-variable "subnet_candidates" {
-  description = "Flatten list of maps defining candidate subnets to create"
-  type = list(object({
-    vpc_type          = string
-    availability_zone = string
-    subnet_type       = string
-  }))
-  default = []
-}
-
-
-variable "aws_region" {
-  type        = string
 }
 
 
