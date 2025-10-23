@@ -27,6 +27,7 @@ root/
 ```
 
 ## Features
+
 	•	Modular deployment using Terraform modules.
 	•	VPC creation with multiple environments (test/prod).
 	•	Subnet orchestration across multiple availability zones.
@@ -57,6 +58,7 @@ terraform destroy -var-file="terraform.tfvars"
 
 
 ## Best Practices
+
 	•	Use module outputs to pass values between layers.
 	•	Keep sensitive variables in secure storage or encrypted tfvars files.
 	•	Use provider aliases to manage multiple AWS accounts or roles.
