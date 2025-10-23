@@ -7,6 +7,13 @@ terraform {
   }
 }
 
+
 provider "aws" {
-  region = var.aws_region # Use a variable for region (defined in variables.tf)
+  alias  = "network_layer"
+  region = var.aws_region
+}
+
+provider "aws" {
+  alias  = "compute_layer"
+  region = var.aws_region
 }
