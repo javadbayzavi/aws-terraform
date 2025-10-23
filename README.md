@@ -1,8 +1,8 @@
-AWS Terraform Project
+# AWS Terraform Project
 
 This repository contains Terraform modules to deploy AWS infrastructure including VPCs, subnets, and security groups. The project is organized with reusable modules for clean orchestration and layered deployment.
 
-Project Structure
+## Project Structure
 ```
 root/
   ├─ modules/
@@ -26,7 +26,7 @@ root/
   └─ terraform.tfvars
 ```
 
-Features
+## Features
 	•	Modular deployment using Terraform modules.
 	•	VPC creation with multiple environments (test/prod).
 	•	Subnet orchestration across multiple availability zones.
@@ -34,29 +34,29 @@ Features
 	•	Outputs organized for easy reference by upper-layer modules.
 	•	Parameterized configuration via terraform.tfvars.
 
-Usage
-	1.	Initialize Terraform:
-
+## Usage
+Initialize Terraform:
+```bash
 terraform init
+```
 
-
-	2.	Plan the deployment:
-
+Plan the deployment:
+```bash
 terraform plan -var-file="terraform.tfvars"
+```
 
-
-	3.	Apply the deployment:
-
+Apply the deployment:
+```bash
 terraform apply -var-file="terraform.tfvars"
+```
 
-
-	4.	Destroy resources:
-
+Destroy resources:
+```bash
 terraform destroy -var-file="terraform.tfvars"
+```
 
 
-
-Best Practices
+## Best Practices
 	•	Use module outputs to pass values between layers.
 	•	Keep sensitive variables in secure storage or encrypted tfvars files.
 	•	Use provider aliases to manage multiple AWS accounts or roles.
