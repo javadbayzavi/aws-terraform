@@ -19,6 +19,7 @@ locals {
       ]
     ]
   ])
+
 }
 
 #Deploy Subnets
@@ -52,3 +53,9 @@ module "ig" {
   vpc_id = module.vpc_module[each.key].vpc_id
 }
 
+#Deploy Elastic IPs
+module "eip" {
+  source = "./eip"
+  for_each = {for _, vpc_type in var.vpc_types : vpc_type => vpc_type}
+  environment = each.key
+}

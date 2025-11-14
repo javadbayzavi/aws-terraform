@@ -1,6 +1,5 @@
 resource aws_eip "project_eip" {
-    vpc = true
-    availability_zone = var.az_id
+    domain = "vpc"
     tags = {
         Name = "${var.environment}-eip"
     }
