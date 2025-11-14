@@ -32,3 +32,8 @@ variable "AZs" {
 variable "subnet_types" {
   default = ["public", "private"]
 }
+
+variable "nat-ig-subnet-type" {
+  type = list(string)
+  default = ["public"]
+}

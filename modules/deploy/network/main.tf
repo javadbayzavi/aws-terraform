@@ -59,3 +59,12 @@ module "eip" {
   for_each = {for _, vpc_type in var.vpc_types : vpc_type => vpc_type}
   environment = each.key
 }
+
+#Deploy NAT Gateways
+module "nat" {
+  source = "./nat"
+  for_each = {for _, subnet_type in var.nat_ig_subnet_type : subnet_type => subnet_type}
+  environment = each.key
+  subnet_id = module.subnets[each.key].subnet_id
+  ig_id = module.ig[each.key].ig_id
+}

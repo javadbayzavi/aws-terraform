@@ -24,3 +24,7 @@ variable "AZs" {
 variable "subnet_types" {
   type = list(string)
 }
+
+variable "nat-ig-subnet-type" {
+  type = list(string)
+}
