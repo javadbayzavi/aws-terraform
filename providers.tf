@@ -17,3 +17,8 @@ provider "aws" {
   alias  = "compute_layer"
   region = var.aws_region
 }
+
+provider "aws" {
+  alias = "compute_layer"
+  region = var.aws_region
+}
