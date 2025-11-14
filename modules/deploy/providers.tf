@@ -10,7 +10,8 @@ terraform {
       source = "hashicorp/aws"
       configuration_aliases = [
         aws.network_layer,
-        aws.compute_layer
+        aws.compute_layer,
+        aws.elb_layer
       ]
     }
   }

@@ -6,7 +6,7 @@ variable "aws_region" {
 
 variable "vpcs_cidr" {
   description = "Map of VPC names to CIDR blocks"
-  type = map(string)
+  type        = map(string)
   default = {
     test = "10.0.0.0/16",
     prod = "10.1.0.0/16",

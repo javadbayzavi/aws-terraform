@@ -3,10 +3,14 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 5.0" # Or a more recent version you prefer
+      configuration_aliases = [
+        aws.network_layer,
+        aws.compute_layer,
+        aws.elb_layer
+      ]
     }
   }
 }
-
 
 provider "aws" {
   alias  = "network_layer"
@@ -19,6 +23,6 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias = "compute_layer"
+  alias  = "elb_layer"
   region = var.aws_region
 }

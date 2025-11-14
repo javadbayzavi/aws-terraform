@@ -6,7 +6,7 @@ module "vpc_module" {
   cidr_block = each.value
 }
 
-#This local put the subnet deploy logic inside of the network module. In order to make module more independet we can remove this local and inilise values in the root tfvar file.
+#This local put the subnet deploy logic inside of the network module. In order to make module more independet we can remove this local and initialise values in the root tfvar file.
 locals {
   subnet_candidates = flatten([
     for vpc in var.vpc_types : [
@@ -43,3 +43,12 @@ module "sgs" {
   vpc_id      = module.vpc_module[each.key].vpc_id
   allowed_ports = [22, 443]
 }
+
+#Deploy Iternet Gateway
+module "ig" {
+  source = "./ig"
+  for_each = {for _, vpc_type in var.vpc_types : vpc_type => vpc_type}
+  environment = each.key
+  vpc_id = module.vpc_module[each.key].vpc_id
+}
+
